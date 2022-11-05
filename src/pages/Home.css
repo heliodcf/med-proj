@@ -1,0 +1,31 @@
+.background{
+    background: url("../Images/Background1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+    height:80vh;
+    padding: 150px;
+}
+
+.box{
+    display:flex;
+    justify-content: center;
+    
+}
+
+.titulo {
+    align-items: center;
+    text-align: center;
+    padding: 1rem 4rem;
+    color: #ffffff;
+    font-size: 60px;
+    font-family: Helvetica;
+  }
+
+  .Foto {
+    width: 40%;
+    height: 60%;
+    padding: 4rem 1rem 5rem 5rem;
+  }
+
+  

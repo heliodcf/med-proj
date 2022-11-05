@@ -1,0 +1,20 @@
+#navbar {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #193e6d;
+    position: fixed;
+  }
+
+  .logo {
+    width: 40%;
+    
+    padding: 1rem 2rem;
+  }
+
+  .menu{
+    color: #ffffff;
+    font-size: 2rem;
+     justify-self: start;
+    text-decoration: none;
+  }
