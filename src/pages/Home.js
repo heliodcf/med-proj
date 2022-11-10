@@ -4,6 +4,7 @@ import FotoRaphael from "../Images/FotoRaphael.png";
 
 function Home() {
   return (
+    <div>
     <div className="background">
       <div className="box">
 
@@ -13,6 +14,11 @@ function Home() {
         </h1>
 
       </div>
+    </div>
+    <div>
+        
+    </div>
+    
     </div>
   );
 }

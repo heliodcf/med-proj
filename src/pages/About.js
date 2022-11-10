@@ -6,8 +6,11 @@ function About() {
   return (
     <div className='about'>
       <>
-      <div>
+      
       <h1>História do Dr Raphael Cunha o “Dr Emagrecimento”</h1>
+
+<img></img>
+ <div>     
 <p>O Dr Raphael Cunha – sabiamente apelidado de Dr Emagrecimento devido sua experiência e resultados na área do emagrecimento – atua nesta área há mais de 15 anos. Como médico, atua na área da medicina integrativa, com foco no emagrecimento, saúde e envelhecimento saudável.</p>
 <p>O Dr Raphael é médico (CRM 27328), com mestrado e doutorado na área das ciências da saúde, com Estágio Sanduíche na Europa; pós-graduado em Fisiologia do exercício; e também em Medicina do Esporte; É pesquisador e orientador de mestrado e doutorado no PPG Movimento Humano e Reabilitação da Universidade Evangélica de Goiás; e também tem formação em Educação Física. Seu currículo lattes tem inacreditáveis 60 páginas.</p>
 <p>Seu olhar holístico conjuntamente a sua experiência técnica e científica é que faz com que  o Dr Raphael Cunha humanize e individualize suas condutas no emagrecimento. </p>
