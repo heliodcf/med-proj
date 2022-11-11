@@ -1,6 +1,8 @@
 import React from "react";
 import "./Home.css";
 import FotoRaphael from "../Images/FotoRaphael.png";
+import Signup from "./Signup";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -36,7 +38,9 @@ function Home() {
         </>
         
       </div>
+      <Link to='./Signup'>
       <button className="botCadastro">QUERO ME INSCREVER</button>
+      </Link>
     </div>
   );
 }

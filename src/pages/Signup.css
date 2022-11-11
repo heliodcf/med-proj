@@ -3,4 +3,14 @@
     padding-top: 190px ;
     margin-left: 70px;
     line-height: 2;
+
+}
+
+.backgroundSignup{
+    background: url("../Images/Background2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+    height:80vh;
+    padding: 150px;
 }
