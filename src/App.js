@@ -8,6 +8,7 @@ import About from './pages/About';
 import Instituto from './pages/Instituto';
 import LoginPage from './pages/LoginPage';
 import Navbar from './components/Navbar';
+import Signup from './pages/Signup';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/About' element={<About/> } />
         <Route path='/Instituto' element={<Instituto/> } />
         <Route path='/login' element={<LoginPage/> } />
+        <Route path='/Signup' element={<Signup/> } />
       </Routes>
     </div>
   );

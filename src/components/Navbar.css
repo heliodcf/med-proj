@@ -4,6 +4,7 @@
     padding: 1rem 2rem;
     background-color: #193e6d;
     position: fixed;
+    top: 0;
   }
 
   .logo {
