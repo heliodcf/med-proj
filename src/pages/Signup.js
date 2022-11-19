@@ -1,4 +1,5 @@
 import { useState } from "react";
+import DashboardMedico from "./DashboardMedico";
 
 import "./Signup.css";
 
@@ -43,7 +44,7 @@ const Signup = () => {
               onChange={(e) => setPassword(e.target.password)}
             />
           </div>
-          <button type="submit">Signup</button>
+          <button type="submit" onClick={<DashboardMedico />}>Signup</button>
         </form>
       </div>
     </div>

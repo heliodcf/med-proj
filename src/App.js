@@ -9,6 +9,7 @@ import Instituto from './pages/Instituto';
 import LoginPage from './pages/LoginPage';
 import Navbar from './components/Navbar';
 import Signup from './pages/Signup';
+import DashboardMedico from './pages/DashboardMedico';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/Instituto' element={<Instituto/> } />
         <Route path='/login' element={<LoginPage/> } />
         <Route path='/Signup' element={<Signup/> } />
+        <Route path='/DashboardMedico'element={<DashboardMedico />} />
       </Routes>
     </div>
   );
