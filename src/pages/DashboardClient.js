@@ -15,7 +15,7 @@ function DashboardClient({user}) {
         if (user.role === 'doctor'){
             navigate ('/dashmedico')
         }
-    }, [])
+    }, [navigate, user.role])
 
   return (
 
