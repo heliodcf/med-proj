@@ -10,6 +10,15 @@ const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5000";
 class ApiPatient {
   constructor() {
     this.api = axios.create({ baseURL: apiUrl });
+    this.api.interceptors.request.use((request) => {
+      const token = getToken();
+      if (token) {
+        request.headers = {
+          Authorization: `Bearer ${token}`,
+        };
+      }
+      return request;
+    });
   }
 
   signup = async ({ username, email, password }) => {
@@ -35,13 +44,8 @@ class ApiPatient {
   };
 
   verify = async () => {
-    const token = getToken();
     try {
-      const { data } = await this.api.get("/auth/verify", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const { data } = await this.api.get("/auth/verify");
       return data;
     } catch (error) {
       handleResponseError(error);
@@ -66,23 +70,26 @@ class ApiPatient {
     someSurgery,
   }) => {
     try {
-      await this.api.post("/anamnese", {
-        gender,
-        weight,
-        height,
-        isSmoker,
-        isAlcoholic,
-        exerciseRestriction,
-        haveDisease,
-        useMedicine,
-        hereditaryDisease,
-        doDiet,
-        diffcultyLosingWeight,
-        sleepTime,
-        wakeUpTired,
-        medicineAllergy,
-        someSurgery,
-      });
+      await this.api.post(
+        "/anamnese",
+        {
+          gender,
+          weight,
+          height,
+          isSmoker,
+          isAlcoholic,
+          exerciseRestriction,
+          haveDisease,
+          useMedicine,
+          hereditaryDisease,
+          doDiet,
+          diffcultyLosingWeight,
+          sleepTime,
+          wakeUpTired,
+          medicineAllergy,
+          someSurgery,
+        }
+      );
     } catch (error) {
       handleResponseError(Error);
     }
@@ -96,7 +103,7 @@ class ApiPatient {
     messageToDoctor,
   }) => {
     try {
-      await this.api.post("/acompanhamento", {
+      await this.api.post("/acompanhamento/consulta", {
         weight,
         abdominalCircumference,
         hipCircumference,

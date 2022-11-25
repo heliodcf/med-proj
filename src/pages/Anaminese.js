@@ -40,7 +40,7 @@ function Anaminese() {
     e.preventDefault();
 
     try {
-        console.log('aqui')
+  
       await apiPatient.anamnese({
         gender: form.genero,
         weight: form.peso,

@@ -47,8 +47,8 @@ const validarToken = async () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashmedico" element={<DashboardMedico user={user}/>} />
           <Route path="/dashclient" element={<DashboardClient user={user}/>} />
-          <Route path="/anaminese" element={<Anaminese />} />
-          <Route path="/acompanhamento" element={<Acompanhamento />} />
+          <Route path="/anaminese" element={<Anaminese validarToken={validarToken}/>} />
+          <Route path="/acompanhamento" element={<Acompanhamento validarToken={validarToken}/>} />
           <Route path="/anamineses" element={<AnamneseMedico />} />
           <Route path="/acompanhamentos" element={<AcompanhamentoMedico />} />
 

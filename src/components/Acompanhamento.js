@@ -28,7 +28,7 @@ function Acompanhamento() {
     e.preventDefault();
 
     try {
-      console.log("aqui");
+  
       await apiPatient.acompanhamento({
         weight: form.peso,
         abdominalCircumference: form.medida,
@@ -36,6 +36,8 @@ function Acompanhamento() {
         followedSteps: form.procedimentos,
         messageToDoctor: form.mensagem,
       });
+
+      
 
       setForm(inicialForm);
     } catch (error) {
