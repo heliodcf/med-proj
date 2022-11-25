@@ -1,5 +1,8 @@
 import { useState } from "react";
-import DashboardMedico from "./DashboardMedico";
+import { useNavigate } from "react-router-dom";
+
+import apiPatient from "../api/pm.api";
+
 
 import "./Signup.css";
 
@@ -8,8 +11,19 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    try { 
+      await apiPatient.signup({username, email, password})
+      navigate ('/login')
+      
+    } catch (error) {
+      window.alert(error.message)
+    }
+
   };
   console.log("Antes do return");
   return (
@@ -41,10 +55,10 @@ const Signup = () => {
               id="password"
               type="password"
               value={password}
-              onChange={(e) => setPassword(e.target.password)}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button type="submit" onClick={<DashboardMedico />}>Signup</button>
+          <button type="submit">Signup</button>
         </form>
       </div>
     </div>

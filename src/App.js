@@ -1,30 +1,53 @@
+import "./App.css";
 
-import './App.css';
+import { Routes, Route } from "react-router-dom";
 
-import { Routes, Route } from 'react-router-dom';
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Instituto from "./pages/Instituto";
+import LoginPage from "./pages/LoginPage";
+import Navbar from "./components/Navbar";
+import Signup from "./pages/Signup";
+import DashboardMedico from "./pages/DashboardMedico";
+import DashboardClient from "./pages/DashboardClient";
+import Anaminese from "./pages/Anaminese";
+import Sidebar from "./components/Sidebar";
+import Acompanhamento from "./components/Acompanhamento";
 
-import Home from './pages/Home';
-import About from './pages/About';
-import Instituto from './pages/Instituto';
-import LoginPage from './pages/LoginPage';
-import Navbar from './components/Navbar';
-import Signup from './pages/Signup';
-import DashboardMedico from './pages/DashboardMedico';
+import {useState, useEffect} from 'react';
+
+import apiPatient from "./api/pm.api";
 
 function App() {
+
+  const [user, setUser] = useState({});
+
+const validarToken = async () => {
+     const userInfo = await apiPatient.verify()
+     setUser(userInfo)
+    }
+
+  useEffect (() => {
+    
+    validarToken();
+  }, [])
+
   return (
     <div>
-
-      <Navbar/>
-
-      <Routes>
-        <Route path='/' element={<Home/> } />
-        <Route path='/About' element={<About/> } />
-        <Route path='/Instituto' element={<Instituto/> } />
-        <Route path='/login' element={<LoginPage/> } />
-        <Route path='/Signup' element={<Signup/> } />
-        <Route path='/DashboardMedico'element={<DashboardMedico />} />
-      </Routes>
+      <Navbar />
+      <div className="routes">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/instituto" element={<Instituto />} />
+          <Route path="/login" element={<LoginPage validarToken={validarToken} />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/dashmedico" element={<DashboardMedico />} />
+          <Route path="/dashclient" element={<DashboardClient user={user}/>} />
+          <Route path="/anaminese" element={<Anaminese />} />
+          <Route path="/acompanhamento" element={<Acompanhamento />} />
+        </Routes>
+      </div>
     </div>
   );
 }

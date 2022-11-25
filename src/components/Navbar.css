@@ -5,11 +5,11 @@
     background-color: #193e6d;
     position: fixed;
     top: 0;
+    height: 145px;
   }
 
   .logo {
     width: 40%;
-    
     padding: 1rem 2rem;
   }
 

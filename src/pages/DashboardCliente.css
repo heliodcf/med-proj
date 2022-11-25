@@ -1,0 +1,14 @@
+.dash{
+display: flex;
+background-color:  #c3c6cb;
+min-height: calc(100vh - 145px);
+width: 100%;
+  
+}
+
+.maindash{
+    font-size: 50px;
+    margin-left: 350px;
+    margin-top: 100px;
+    text-align: center;
+}

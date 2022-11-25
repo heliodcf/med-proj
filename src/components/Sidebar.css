@@ -1,0 +1,36 @@
+.side{
+    text-align: center;
+    background-color:  #2f4050;
+    width: 300px;
+    color: white;
+    font-weight: bold;
+    }
+
+.SidebarList{
+    height: auto;
+    padding: 0;
+    width: 100%;
+}
+
+.SidebarList .links{
+    width: 100%;
+    list-style-type: none;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    gap: 5px;
+}
+
+.SidebarList .links.active{
+    background-color: #293846;
+}
+
+
+.SidebarList .row :hover{
+    cursor: pointer;
+    background-color: #293846;
+
+}

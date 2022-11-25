@@ -1,7 +1,7 @@
 
 function DashboardMedico() {
   return (
-    <div>DashboardMedico</div>
+    <div className="dashboard">DashboardMedico</div>
   )
 }
 
