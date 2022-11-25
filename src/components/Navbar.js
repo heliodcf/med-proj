@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Logo from "../Images/RaphaelCunha.png";
 
+
 function Navbar() {
   return (
     <nav id="navbar">
@@ -15,7 +16,8 @@ function Navbar() {
       <div>
       <Link to="/"><div className="menu">HOME</div></Link>
         <Link to="/about"><div className="menu">ABOUT</div></Link>
-        <Link to="/signup"><div className="menu">SIGNUP</div></Link>
+        <Link to="/login"><div className="menu">LOGIN</div></Link>
+        <Link to="/logout"><div className="menu">LOGOUT</div> </Link>
         
       </div>
     </nav>

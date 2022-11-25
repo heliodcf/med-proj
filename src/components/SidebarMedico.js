@@ -2,13 +2,14 @@ import React from "react";
 import "./Sidebar.css";
 import { NavLink } from "react-router-dom";
 
-import { Content } from "./Content";
+import { ContentMedico } from "./ContentMedico"
 
-function Sidebar() {
+
+function SidebarMedico() {
   return (
     <div className="side">
       <ul className="SidebarList">
-        {Content.map((val, key) => {
+        {ContentMedico.map((val, key) => {
           return (
             <li key={key} className="row">
               <NavLink to={val.link} className='links'>
@@ -23,4 +24,4 @@ function Sidebar() {
   );
 }
 
-export default Sidebar;
+export default SidebarMedico;

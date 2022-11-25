@@ -11,12 +11,14 @@ import Signup from "./pages/Signup";
 import DashboardMedico from "./pages/DashboardMedico";
 import DashboardClient from "./pages/DashboardClient";
 import Anaminese from "./pages/Anaminese";
-import Sidebar from "./components/Sidebar";
 import Acompanhamento from "./components/Acompanhamento";
 
 import {useState, useEffect} from 'react';
 
 import apiPatient from "./api/pm.api";
+import AnamneseMedico from "./pages/AnamneseMedico";
+import AcompanhamentoMedico from "./pages/AcompanhamentoMedico";
+import Logout from "./components/Logout";
 
 function App() {
 
@@ -41,11 +43,15 @@ const validarToken = async () => {
           <Route path="/about" element={<About />} />
           <Route path="/instituto" element={<Instituto />} />
           <Route path="/login" element={<LoginPage validarToken={validarToken} />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/dashmedico" element={<DashboardMedico />} />
+          <Route path="/dashmedico" element={<DashboardMedico user={user}/>} />
           <Route path="/dashclient" element={<DashboardClient user={user}/>} />
           <Route path="/anaminese" element={<Anaminese />} />
           <Route path="/acompanhamento" element={<Acompanhamento />} />
+          <Route path="/anamineses" element={<AnamneseMedico />} />
+          <Route path="/acompanhamentos" element={<AcompanhamentoMedico />} />
+
         </Routes>
       </div>
     </div>

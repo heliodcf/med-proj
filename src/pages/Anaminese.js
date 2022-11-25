@@ -36,30 +36,27 @@ function Anaminese() {
     }));
   };
 
-  const showData = () => {
-    console.log("form: ", form);
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
+        console.log('aqui')
       await apiPatient.anamnese({
-        gender: genero,
-        weight: peso,
-        height: altura,
-        isSmoker: fumante,
-        isAlcoholic: alcool,
-        exerciseRestriction: restricao,
-        haveDisease: doenca,
-        useMedicine: medicamento,
-        hereditaryDisease: hereditaria,
-        doDiet: dieta,
-        diffcultyLosingWeight: perdadepeso,
-        sleepTime: sono,
-        wakeUpTired: cansado,
-        medicineAllergy,
-        someSurgery: cirurgia,
+        gender: form.genero,
+        weight: form.peso,
+        height: form.altura,
+        isSmoker: form.fumante,
+        isAlcoholic: form.alcool,
+        exerciseRestriction: form.restricao,
+        haveDisease: form.doenca,
+        useMedicine: form.medicamento,
+        hereditaryDisease: form.hereditaria,
+        doDiet: form.dieta,
+        diffcultyLosingWeight: form.perdadepeso,
+        sleepTime: form.sono,
+        wakeUpTired: form.cansado,
+        medicineAllergy: form.alergia,
+        someSurgery: form.cirurgia,
       });
       
       setForm(inicialForm);
@@ -215,7 +212,7 @@ function Anaminese() {
           </label>
 
           <div>
-            <button className="Button" onClick={showData}>
+            <button type="submit" className="Button">
               ENVIAR
             </button>
           </div>

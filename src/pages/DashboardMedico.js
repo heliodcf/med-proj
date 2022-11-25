@@ -1,7 +1,16 @@
+import SidebarMedico from '../components/SidebarMedico';
 
-function DashboardMedico() {
+import "./DashboardCliente.css";
+
+function DashboardMedico({user}) {
   return (
-    <div className="dashboard">DashboardMedico</div>
+
+    <div className='dash'>
+        <SidebarMedico />
+        <main className='maindash'>
+        Bem-vindo de volta Dr {user.username} <p> hoje é o dia de ajudar muitas pessoas!</p>
+        </main>
+        </div>
   )
 }
 
