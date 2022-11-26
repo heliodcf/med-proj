@@ -117,6 +117,7 @@ class ApiPatient {
 
   acompanhamentos = async() => {
     try {
+        
         const { data } = await this.api.get("/acompanhamento")
         return data
     } catch (error) {
@@ -151,7 +152,14 @@ class ApiPatient {
     }
   }
 
-
+  delete = async(id) => {
+    try {
+        const { data } = await this.api.delete(`/acompanhamento/${id}`)
+        return data
+    } catch (error) {
+        handleResponseError(error)
+    }
+  }
 
 }
 

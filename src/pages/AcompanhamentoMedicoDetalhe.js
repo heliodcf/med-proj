@@ -3,9 +3,19 @@ import { useParams } from 'react-router-dom'
 import apiPatient from '../api/pm.api'
 import SidebarMedico from '../components/SidebarMedico'
 
+
+
+
 function AcompanhamentoMedicoDetalhe() {
     const { id: acompanhamentoId } = useParams()
     const [acompanhamento, setAcompanhamento] = useState({})
+
+
+
+    const onDelete = async (id) => {
+        const deletar = await apiPatient.delete(id)
+    }
+
     
     const getAcompanhamentoDetalhe = useCallback(async () => {
         const data = await apiPatient.acompanhamentoDetalhe(acompanhamentoId)
@@ -27,7 +37,7 @@ function AcompanhamentoMedicoDetalhe() {
                 <div>Hip Circumference: {acompanhamento.hipCircumference}</div>
                 <div>Abdominal Circumference: {acompanhamento.abdominalCircumference}</div>
                 <div>Followed Steps: {acompanhamento.followedSteps}</div>
-                <button>DELETE</button>
+                <button onClick={() => onDelete(acompanhamento._id)}>DELETE</button>
             </div>
         </div>
     )
