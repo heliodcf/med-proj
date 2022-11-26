@@ -91,7 +91,7 @@ class ApiPatient {
         }
       );
     } catch (error) {
-      handleResponseError(Error);
+      handleResponseError(error);
     }
   };
 
@@ -111,10 +111,51 @@ class ApiPatient {
         messageToDoctor,
       });
     } catch (error) {
-      handleResponseError(Error);
+      handleResponseError(error);
     }
   };
+
+  acompanhamentos = async() => {
+    try {
+        const { data } = await this.api.get("/acompanhamento")
+        return data
+    } catch (error) {
+        handleResponseError(error)
+    }
+  }
+
+  acompanhamentoDetalhe = async(id) => {
+    try {
+        const { data } = await this.api.get(`/acompanhamento/${id}`)
+        return data
+    } catch (error) {
+        handleResponseError(error)
+    }
+  }
+
+  anamneses = async() => {
+    try {
+        const { data } = await this.api.get("/anamnese")
+        return data
+    } catch (error) {
+        handleResponseError(error)
+    }
+  }
+
+  anamnesesDetalhe = async(id) => {
+    try {
+        const { data } = await this.api.get(`/anamnese/${id}`)
+        return data
+    } catch (error) {
+        handleResponseError(error)
+    }
+  }
+
+
+
 }
+
+
 
 const apiPatient = new ApiPatient();
 

@@ -182,11 +182,11 @@ function Anaminese() {
               onChange={onChange}
               name="sono"
               value={form.sono}
-            />
+            /> horas   ||    
           </label>
 
           <label>
-            Acorda cansado?
+               Acorda cansado?
             <select onChange={onChange} name="cansado">
             <option value={true}>Sim</option>
               <option value={false}>Não</option>

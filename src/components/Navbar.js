@@ -6,10 +6,11 @@ import Logo from "../Images/RaphaelCunha.png";
 import {removeToken} from '../Utils/token.util'
 import { useNavigate } from "react-router-dom";
 
-function Navbar() {
+function Navbar({isUserLoggedIn, setUser}) {
   const navigate = useNavigate();
   const logout = () => {
     removeToken()
+    setUser({})
     navigate('/')
   }
   return (
@@ -22,8 +23,9 @@ function Navbar() {
       <div>
       <Link to="/"><div className="menu">HOME</div></Link>
         <Link to="/about"><div className="menu">ABOUT</div></Link>
-        <Link to="/login"><div className="menu">LOGIN</div></Link>
-        <div className="menu" onClick={logout}>LOGOUT</div>
+        {isUserLoggedIn ?  <div className="menu" onClick={logout}>LOGOUT</div> : <Link to="/login"><div className="menu">LOGIN</div></Link>}
+       
+       
         
       </div>
     </nav>

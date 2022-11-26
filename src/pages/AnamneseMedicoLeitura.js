@@ -20,11 +20,11 @@ function AnamneseMedico() {
       <SidebarMedico />
       <div className='acompanhamentos'>
       <ul>
-      {anamenesedr.map(({_id, gender, createdAt}) => {
+      {acompanhamentos.map(({_id, weight, createdAt}) => {
         return (
           <Link key={_id} to={`/anamneses/${_id}`}>
             <li>
-              Ananmenese {gender} e foi criado em {new Date(createdAt).toLocaleDateString()}
+              Check in com o peso {weight} e foi criado em {new Date(createdAt).toLocaleDateString()}
             </li>
           </Link>
         )
