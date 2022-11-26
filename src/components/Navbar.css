@@ -17,5 +17,6 @@
     color: #ffffff;
     font-size: 20px;
      justify-self: start;
+     text-underline-offset: none;
     text-decoration: none;
   }
