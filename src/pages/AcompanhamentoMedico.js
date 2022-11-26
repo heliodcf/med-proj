@@ -24,7 +24,7 @@ function AcompanhamentoMedico() {
         return (
           <Link key={_id} to={`/acompanhamentos/${_id}`}>
             <li>
-              Check in weight is {weight} and was created on {new Date(createdAt).toLocaleDateString()}
+              Check in com o peso {weight} e foi criado em {new Date(createdAt).toLocaleDateString()}
             </li>
           </Link>
         )
